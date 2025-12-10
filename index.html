@@ -11,6 +11,7 @@
             --accent: #FF671F;
             --light: #F5F5F5;
             --dark: #333333;
+            --light-blue: #e8f4ff;
         }
         
         * {
@@ -460,6 +461,30 @@
             display: block;
         }
         
+        /* NOVOS ESTILOS PARA VÍDEOS EM CARDS */
+        .videos-section {
+            margin: 50px 0;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .video-card-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .video-card-item:hover {
+            transform: translateY(-10px);
+        }
+        
         .program-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -503,6 +528,72 @@
             margin-bottom: 10px;
         }
         
+        /* NOVA SEÇÃO REUNIÕES E PALESTRAS */
+        .meetings-section {
+            background-color: #f9f9f9;
+        }
+        
+        .meetings-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 10px;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .meetings-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .meetings-carousel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .meetings-carousel::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .meetings-carousel::-webkit-scrollbar-thumb:hover {
+            background: #003366;
+        }
+        
+        .meeting-photo {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            position: relative;
+        }
+        
+        .meeting-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .meeting-photo:hover img {
+            transform: scale(1.1);
+        }
+        
+        .meeting-photo p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 75, 135, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 0;
+        }
+        
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -510,7 +601,7 @@
         }
         
         .info-card {
-            background-color: white;
+            background-color: var(--light-blue);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -653,6 +744,11 @@
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 20px;
             }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -725,6 +821,15 @@
             
             .social-icon i {
                 font-size: 2rem;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .meeting-photo {
+                width: 250px;
+                height: 180px;
             }
         }
         
@@ -825,6 +930,11 @@
             .social-icon span {
                 font-size: 0.8rem;
             }
+            
+            .meeting-photo {
+                width: 220px;
+                height: 160px;
+            }
         }
         
         @media (max-width: 375px) {
@@ -852,6 +962,15 @@
             
             .video-container h3 {
                 font-size: 1.1rem;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .meeting-photo {
+                width: 200px;
+                height: 150px;
             }
         }
         
@@ -1082,6 +1201,7 @@
             </li>
             <li><a href="#sobre">Sobre o Evento</a></li>
             <li><a href="#programacao">Programação</a></li>
+            <li><a href="#reunioes">Reuniões e Palestras</a></li>
             <li><a href="#informacoes">Informações</a></li>
             <li><a href="#organizacao">Organização</a></li>
             <li><a href="#contato">Contato</a></li>
@@ -1130,33 +1250,45 @@
                     <p>Nos dias 16, 17 e 18 de outubro de 2026, a cidade de Olinda, em Pernambuco, será palco de um dos mais importantes eventos do movimento escoteiro na América Latina. A Assembleia WFIS (World Federation of Independent Scouts) reunirá cerca de 100 líderes escoteiros de diversos países para três dias de atividades, palestras, intercâmbio de experiências e, claro, muita integração e fortalecimento dos laços de amizade entre as nações.</p>
                     <p>Realizada pela Associação Escoteira Sempre Alerta Brasil (SAB), a assembleia acontecerá em locais emblemáticos de Olinda, uma cidade histórica com paisagens deslumbrantes e um ambiente que reforça a importância do escotismo e do aprendizado contínuo.</p>
                     <p>A Assembleia WFIS tem como objetivo promover o fortalecimento do escotismo, a troca de experiências entre líderes de diferentes países e a construção de um futuro mais colaborativo e sustentável para o movimento escoteiro.</p>
-                    
-                    <!-- Seção do Vídeo -->
-                    <div class="video-container">
-                        <h3>Conheça mais sobre a Assembleia WFIS 2026</h3>
-                        <div class="video-wrapper">
-                            <iframe 
-                                src="https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0" 
-                                title="Assembleia WFIS 2026"
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                    </div>
                 </div> <!-- FECHAMENTO CORRETO da div about-text -->
                 
                 <div class="about-image">
                     <img src="images/logo-wfis.png" alt="Atividades escoteiras">
                 </div>
             </div>
-        </div>
-    </section>  
-    
-    <section id="programacao" style="background-color: #f9f9f9;">
-        <div class="container">
-            <h2 class="section-title">Programação</h2>
-            <div class="program-grid">
+            
+            <!-- NOVA SEÇÃO DE VÍDEOS EM CARDS -->
+            <div class="videos-section">
+                <div class="video-container">
+                    <h3>Conheça mais sobre a Assembleia WFIS 2026</h3>
+                </div>
+                
+                <div class="videos-grid">
+                    <!-- Vídeo da Assembleia WFIS -->
+                    <div class="video-card-item video-card">
+                        <div class="program-image">
+                            <div class="video-thumbnail" onclick="openVideoModal('https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0')">
+                                <img src="https://img.youtube.com/vi/N6kt0a7dDUc/maxresdefault.jpg" 
+                                     alt="Vídeo sobre a Assembleia WFIS 2026"
+                                     onerror="this.src='https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0'">
+                                <div class="play-button">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="video-overlay">
+                                    <p>Clique para assistir em tela cheia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h3>Assembleia WFIS 2026</h3>
+                            <p>Conheça mais sobre a Assembleia WFIS 2026 que acontecerá em Olinda, Pernambuco, reunindo líderes escoteiros de toda a América Latina.</p>
+                            <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0')">
+                                <i class="fas fa-play"></i> Assistir Vídeo
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Vídeo de Atividades Culturais e Educacionais -->
                 <div class="program-card video-card">
                     <div class="program-image">
                         <div class="video-thumbnail" onclick="openVideoModal('https://www.youtube.com/embed/lce79QcbVqY?autoplay=1&rel=0')">
@@ -1171,15 +1303,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="program-content">
-                        <h3>Atividades Culturais e Educacionais</h3>
-                        <p>Os participantes terão a oportunidade de conhecer a rica cultura de Pernambuco através de visitas a locais históricos e atividades que promovem o intercâmbio cultural entre os países participantes.</p>
-                        <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/lce79QcbVqY?autoplay=1&rel=0')">
-                            <i class="fas fa-play"></i> Assistir Vídeo Completo
-                        </button>
+                        <div class="program-content">
+                            <h3>Atividades Culturais e Educacionais</h3>
+                            <p>Os participantes terão a oportunidade de conhecer a rica cultura de Pernambuco através de visitas a locais históricos e atividades que promovem o intercâmbio cultural entre os países participantes.</p>
+                            <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/lce79QcbVqY?autoplay=1&rel=0')">
+                                <i class="fas fa-play"></i> Assistir Vídeo Completo
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
+            </div>
+        </div>
+    </section>  
+    
+    <section id="programacao" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Programação</h2>
+            <div class="program-grid">
                 <div class="program-card">
                     <div class="program-image">
                         <img src="images/itamaraca.jpg" alt="Passeio à Ilha de Itamaracá">
@@ -1187,6 +1327,17 @@
                     <div class="program-content">
                         <h3>Passeio à Ilha de Itamaracá</h3>
                         <p>Os participantes poderão conhecer o Forte de Itamaracá, um importante marco histórico da região, além de explorar as belezas naturais da ilha. O passeio será seguido por um almoço em Itapissuma, uma cidade vizinha conhecida por sua gastronomia local.</p>
+                    </div>
+                </div>
+                
+                <!-- NOVO CARD PARA ITAPISSUMA -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/itapissuma.jpg" alt="Passeio à Cidade de Itapissuma">
+                    </div>
+                    <div class="program-content">
+                        <h3>Passeio à Cidade de Itapissuma</h3>
+                        <p>Os participantes almoçarão em Itapissuma, cidade conhecida por sua rica cultura e gastronomia local. Após o almoço, farão uma visita rápida aos principais pontos da cidade para conhecer suas belezas e tradições.</p>
                     </div>
                 </div>
                 
@@ -1199,15 +1350,36 @@
                         <p>A jornada cultural será encerrada no Recife Antigo, onde os líderes terão a oportunidade de conhecer alguns dos principais pontos turísticos da capital pernambucana, como o Marco Zero, a Rua do Bom Jesus e o famoso Museu do Frevo.</p>
                     </div>
                 </div>
-                
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="images/wfis2.jpg" alt="Reuniões e palestras">
-                    </div>
-                    <div class="program-content">
-                        <h3>Reuniões e Palestras</h3>
-                        <p>Durante os três dias de evento, serão realizadas reuniões com especialistas em educação, gestão de grupos e liderança, sempre com foco na formação contínua dos líderes escoteiros.</p>
-                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NOVA SEÇÃO REUNIÕES E PALESTRAS -->
+    <section id="reunioes" class="meetings-section">
+        <div class="container">
+            <h2 class="section-title">Reuniões e Palestras</h2>
+            <p style="text-align: center; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Durante os três dias de evento, serão realizadas reuniões com especialistas em educação, gestão de grupos e liderança, sempre com foco na formação contínua dos líderes escoteiros.
+            </p>
+            
+            <div class="meetings-carousel">
+                <div class="meeting-photo">
+                    <img src="images/wfis1.jpg">
+                </div>
+                <div class="meeting-photo">
+                    <img src="images/wfis2.jpg">
+                </div>
+                <div class="meeting-photo">
+                    <img src="images/wfis3.jpg">
+                </div>
+                <div class="meeting-photo">
+                    <img src="images/wfis4.jpg">
+                </div>
+                <div class="meeting-photo">
+                    <img src="images/wfis5.jpg">
+                </div>
+                <div class="meeting-photo">
+                    <img src="images/wfis6.jpg">
                 </div>
             </div>
         </div>
@@ -1309,6 +1481,7 @@
                     <ul>
                         <li><a href="#sobre">Sobre o Evento</a></li>
                         <li><a href="#programacao">Programação</a></li>
+                        <li><a href="#reunioes">Reuniões e Palestras</a></li>
                         <li><a href="#informacoes">Informações</a></li>
                         <li><a href="#organizacao">Organização</a></li>
                     </ul>
