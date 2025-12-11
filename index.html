@@ -1338,6 +1338,7 @@
             }
         }
         /* ========== AJUSTES PARA TÍTULO DO VÍDEO ========== */
+/* ========== AJUSTES PARA TÍTULO DO VÍDEO ========== */
 .desktop-title {
     display: inline;
 }
@@ -1346,47 +1347,79 @@
     display: none;
 }
 
-.mobile-title .line1 {
-    display: block;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-bottom: 5px;
-    color: var(--dark);
+/* Estilo para desktop */
+.video-card-item .program-content h3 .desktop-title {
+    display: inline;
 }
 
-.mobile-title .line2 {
-    display: block;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--primary);
+.video-card-item .program-content h3 .mobile-title {
+    display: none;
 }
 
 /* Em dispositivos móveis, mostrar a versão mobile */
 @media (max-width: 768px) {
-    .desktop-title {
+    .video-card-item .program-content h3 .desktop-title {
         display: none;
     }
     
-    .mobile-title {
+    .video-card-item .program-content h3 .mobile-title {
         display: block;
         text-align: center;
     }
-    .mobile-line1 {
+    
+    .mobile-title .mobile-line1 {
         display: block;
         font-size: 1rem;
         font-weight: 600;
         color: var(--dark);
         margin-bottom: 5px;
         line-height: 1.3;
+        text-align: center;
     }
     
-    .mobile-line2 {
+    .mobile-title .mobile-line2 {
         display: block;
         font-size: 1.3rem;
         font-weight: bold;
         color: var(--primary);
         line-height: 1.3;
+        text-align: center;
     }
+    
+    /* Ajuste específico para o título do vídeo SAB */
+    .video-card-item .program-content h3 {
+        line-height: 1.5;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+    .mobile-title .mobile-line1 {
+        font-size: 0.95rem;
+        margin-bottom: 3px;
+    }
+    
+    .mobile-title .mobile-line2 {
+        font-size: 1.2rem;
+    }
+    
+    .video-card-item .program-content h3 {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .mobile-title .mobile-line1 {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-title .mobile-line2 {
+        font-size: 1.1rem;
+    }
+}
     
     /* Ajuste específico para o título do vídeo SAB */
     .video-card-item .program-content h3 {
