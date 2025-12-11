@@ -1337,6 +1337,61 @@
                 font-size: 1.8rem;
             }
         }
+        /* ========== AJUSTES PARA TÍTULO DO VÍDEO ========== */
+.desktop-title {
+    display: block;
+}
+
+.mobile-title {
+    display: none;
+}
+
+.mobile-title .line1 {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.mobile-title .line2 {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Em dispositivos móveis, mostrar a versão mobile */
+@media (max-width: 768px) {
+    .desktop-title {
+        display: none;
+    }
+    
+    .mobile-title {
+        display: block;
+    }
+    
+    /* Ajuste específico para o título do vídeo SAB */
+    .video-card-item .program-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media (max-width: 576px) {
+    .mobile-title .line1 {
+        font-size: 0.95rem;
+    }
+    
+    .mobile-title .line2 {
+        font-size: 1.2rem;
+    }
+    
+    .video-card-item .program-content h3 {
+        font-size: 1rem;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -1429,7 +1484,13 @@
                             </div>
                         </div>
                         <div class="program-content">
-                            <h3>Sempre Alerta Brasil - SAB</h3>
+                      <h3>
+                         <span class="desktop-title">Sempre Alerta Brasil - SAB</span>
+                           <span class="mobile-title">
+                           <span class="line1">Conheça mais sobre a</span>
+                             <span class="line2">Sempre Alerta Brasil - SAB</span>
+                         </span>
+                      </h3>
                             <p>Conheça mais sobre a Sempre Alerta Brasil - SAB, que irá realizar o evento da Assembléia das Américas WFIS 2026.</p>
                             <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0')">
                                 <i class="fas fa-play"></i> Assistir Vídeo
