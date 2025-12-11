@@ -858,6 +858,8 @@
         
         /* ========== RESPONSIVIDADE GERAL ========== */
         
+/* ========== RESPONSIVIDADE GERAL ========== */
+        
         @media (max-width: 1024px) {
             .about-content {
                 gap: 20px;
@@ -902,15 +904,19 @@
             
             .about-content {
                 flex-direction: column;
+                align-items: center; /* Adicionado */
             }
             
             .about-image {
                 max-width: 100%;
-                margin-top: 20px;
+                margin: 30px auto 20px; /* Modificado */
+                order: 2; /* Adicionado - imagem depois do texto */
             }
             
             .about-image img {
-                width: 80%;
+                width: 60%; /* Modificado */
+                margin: 0 auto; /* Adicionado */
+                display: block; /* Adicionado */
             }
             
             .section-title {
@@ -967,6 +973,11 @@
                 font-size: 0.9rem;
                 margin: 5px;
             }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+                gap: 15px;
+            }
             
             nav ul {
                 padding: 8px 10px;
@@ -991,12 +1002,15 @@
             }
             
             .about-text {
-                text-align: left;
+                text-align: justify; /* Modificado */
+                width: 100%;
             }
             
             .about-text p {
-                text-indent: 1em;
-                line-height: 1.6;
+                text-indent: 1.5em; /* Modificado */
+                line-height: 1.7; /* Modificado */
+                text-align: justify; /* Adicionado */
+                margin-bottom: 1.2em; /* Adicionado */
             }
             
             .video-container {
@@ -1012,8 +1026,13 @@
                 font-size: 2rem;
             }
             
+            .about-image {
+                margin: 25px auto 15px; /* Adicionado */
+            }
+            
             .about-image img {
-                width: 100%;
+                width: 80%; /* Modificado */
+                max-width: 300px; /* Adicionado */
             }
             
             .program-grid {
@@ -1028,11 +1047,7 @@
             .program-content h3 {
                 font-size: 1.2rem;
             }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            
+
             .footer-content {
                 flex-direction: column;
                 gap: 20px;
@@ -1057,6 +1072,16 @@
             .meeting-photo {
                 width: 220px;
                 height: 160px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .info-grid {
+                grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+            }
+            
+            .about-image img {
+                width: 95%; /* Ajuste para telas muito pequenas */
             }
         }
         
@@ -1520,7 +1545,7 @@
             <div class="info-grid">
                 <div class="info-card">
                     <i>📅</i>
-                    <h3>Data</h3>
+                    <h3>Data e Horário</h3>
                     <p>16 a 18 de outubro de 2026</p>
                 </div>
                 
@@ -1533,13 +1558,13 @@
                 <div class="info-card">
                     <i>🏢</i>
                     <h3>Organização</h3>
-                    <p>Associação Escoteira Sempre Alerta Brasil (SAB)</p>
+                    <p>Sempre Alerta Brasil (SAB)</p>
                 </div>
                 
                 <div class="info-card">
                     <i>🏨</i>
                     <h3>Hospedagem</h3>
-                    <p>Pousada São Francisco e Núcleo de Apoio a Eventos da UFPE</p>
+                    <p>Pousada São Francisco</p>
                 </div>
             </div>
         </div>
