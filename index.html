@@ -310,57 +310,168 @@
         }
         
         /* Ajuste para responsividade do carrossel */
-        @media (max-width: 768px) {
-            .carousel-container {
-                height: 50vh;
-            }
-            
-            .carousel-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .carousel-content p {
-                font-size: 1rem;
-            }
-            
-            .carousel-nav {
-                width: 30px;
-                height: 30px;
-                font-size: 1.2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .carousel-container {
-                height: 45vh;
-            }
-            
-            .carousel-content h1 {
-                font-size: 1.6rem;
-            }
-            
-            .carousel-nav {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 375px) {
-            .carousel-container {
-                height: 40vh;
-            }
-            
-            .carousel-content h1 {
-                font-size: 1.4rem;
-            }
-            
-            .carousel-content p {
-                font-size: 0.9rem;
-            }
-            
-            .carousel-content {
-                padding: 15px;
-            }
-        }
+/* Ajustes gerais para dispositivos móveis */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 50vh;
+    }
+    
+    .carousel-overlay {
+        /* Gradiente mais claro para melhor visibilidade das imagens */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(0, 0, 0, 0.3) 100%
+        );
+    }
+    
+    .carousel-content {
+        max-width: 90%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.4); /* Menos escuro */
+        backdrop-filter: blur(2px);
+    }
+    
+    .carousel-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .carousel-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Ajuste dos botões para não ficarem muito próximos dos indicadores */
+    .carousel-content .btn {
+        margin-bottom: 10px;
+    }
+    
+    /* Reposicionamento dos indicadores - MAIS ACIMA */
+    .carousel-indicators {
+        bottom: 80px; /* Aumentado de 20px para 80px */
+    }
+    
+    .carousel-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        height: 45vh;
+    }
+    
+    .carousel-overlay {
+        /* Gradiente ainda mais claro para telas pequenas */
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.15) 40%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
+    }
+    
+    .carousel-content {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .carousel-content h1 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .carousel-content h2 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .carousel-content p {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+    }
+    
+    /* Ajuste adicional dos indicadores para telas pequenas */
+    .carousel-indicators {
+        bottom: 70px; /* Posição ajustada */
+        gap: 8px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Esconder navegação por setas em telas muito pequenas */
+    .carousel-nav {
+        display: none;
+    }
+    
+    /* Ajuste dos botões para melhor empilhamento */
+    .carousel-content .btn,
+    .carousel-content .btn-secondary {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .carousel-container {
+        height: 40vh;
+    }
+    
+    .carousel-content {
+        padding: 12px;
+    }
+    
+    .carousel-content h1 {
+        font-size: 1.4rem;
+    }
+    
+    .carousel-content h2 {
+        font-size: 1rem;
+    }
+    
+    .carousel-content p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Ajuste final dos indicadores para telas muito pequenas */
+    .carousel-indicators {
+        bottom: 60px;
+    }
+    
+    /* Garantir que os botões não sobreponham os indicadores */
+    .carousel-content {
+        padding-bottom: 25px;
+    }
+}
+
+/* Adicionar uma media query específica para telas entre 576px e 768px */
+@media (min-width: 577px) and (max-width: 768px) {
+    .carousel-content .btn,
+    .carousel-content .btn-secondary {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-indicators {
+        bottom: 85px;
+    }
+}
         
         section {
             padding: 60px 0;
