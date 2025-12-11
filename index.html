@@ -1339,7 +1339,7 @@
         }
         /* ========== AJUSTES PARA TÍTULO DO VÍDEO ========== */
 .desktop-title {
-    display: block;
+    display: inline;
 }
 
 .mobile-title {
@@ -1369,12 +1369,30 @@
     
     .mobile-title {
         display: block;
+        text-align: center;
+    }
+    .mobile-line1 {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 5px;
+        line-height: 1.3;
+    }
+    
+    .mobile-line2 {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--primary);
+        line-height: 1.3;
     }
     
     /* Ajuste específico para o título do vídeo SAB */
     .video-card-item .program-content h3 {
-        font-size: 1.1rem;
-        line-height: 1.4;
+        line-height: 1.5;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 
@@ -1382,6 +1400,7 @@
 @media (max-width: 576px) {
     .mobile-title .line1 {
         font-size: 0.95rem;
+        margin-bottom: 3px;
     }
     
     .mobile-title .line2 {
@@ -1392,6 +1411,15 @@
         font-size: 1rem;
     }
 }
+@media (max-width: 375px) {
+    .mobile-line1 {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-line2 {
+        font-size: 1.1rem;
+    }
+}        
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -1487,8 +1515,8 @@
                       <h3>
                          <span class="desktop-title">Sempre Alerta Brasil - SAB</span>
                            <span class="mobile-title">
-                           <span class="line1">Conheça mais sobre a</span>
-                             <span class="line2">Sempre Alerta Brasil - SAB</span>
+                           <span class="mobile-line1">Conheça mais sobre a</span>
+                             <span class="mobile-line2">Sempre Alerta Brasil - SAB</span>
                          </span>
                       </h3>
                             <p>Conheça mais sobre a Sempre Alerta Brasil - SAB, que irá realizar o evento da Assembléia das Américas WFIS 2026.</p>
