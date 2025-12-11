@@ -1452,7 +1452,83 @@
     .mobile-line2 {
         font-size: 1.1rem;
     }
-}        
+}
+        /* ========== TÍTULO DO VÍDEO SAB - VERSÃO CORRIGIDA ========== */
+
+/* Estilo padrão (desktop) */
+.video-title {
+    position: relative;
+}
+
+.desktop-title {
+    display: block;
+}
+
+.mobile-title-wrapper {
+    display: none;
+}
+
+/* Versão mobile */
+@media (max-width: 768px) {
+    .video-title .desktop-title {
+        display: none;
+    }
+    
+    .video-title .mobile-title-wrapper {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .mobile-line1 {
+        display: block !important;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+        line-height: 1.4;
+        text-align: center;
+    }
+    
+    .mobile-line2 {
+        display: block !important;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #004B87;
+        line-height: 1.4;
+        text-align: center;
+    }
+    
+    /* Forçar quebra de linha */
+    .video-title {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+}
+
+/* Telas pequenas */
+@media (max-width: 576px) {
+    .mobile-line1 {
+        font-size: 0.95rem;
+        margin-bottom: 3px;
+    }
+    
+    .mobile-line2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 375px) {
+    .mobile-line1 {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-line2 {
+        font-size: 1.1rem;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -1544,20 +1620,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="program-content">
-                      <h3>
-                         <span class="desktop-title">Sempre Alerta Brasil - SAB</span>
-                           <span class="mobile-title">
-                           <span class="mobile-line1">Conheça mais sobre a</span>
-                             <span class="mobile-line2">Sempre Alerta Brasil - SAB</span>
-                         </span>
-                      </h3>
-                            <p>Conheça mais sobre a Sempre Alerta Brasil - SAB, que irá realizar o evento da Assembléia das Américas WFIS 2026.</p>
-                            <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0')">
-                                <i class="fas fa-play"></i> Assistir Vídeo
-                            </button>
-                        </div>
-                    </div>
+                <div class="program-content">
+                    <h3 class="video-title">
+                        <span class="desktop-title">Sempre Alerta Brasil - SAB</span>
+                        <span class="mobile-title-wrapper">
+                            <span class="mobile-line1">Conheça mais sobre a</span>
+                            <span class="mobile-line2">Sempre Alerta Brasil - SAB</span>
+                        </span>
+                    </h3>
+                    <p>Conheça mais sobre a Sempre Alerta Brasil - SAB, que irá realizar o evento da Assembléia das Américas WFIS 2026.</p>
+                    <button class="btn-video" onclick="openVideoModal('https://www.youtube.com/embed/N6kt0a7dDUc?rel=0&modestbranding=1&autoplay=0')">
+                        <i class="fas fa-play"></i> Assistir Vídeo
+                    </button>
+                </div>
                     
                     <!-- Vídeo de Atividades Culturais e Educacionais -->
                 <div class="program-card video-card">
